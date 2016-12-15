@@ -29,6 +29,7 @@ const AccountModal = ({
       }
       const data = { ...getFieldsValue(), key: item.id };
      	onOk(data);
+     	/*alert({...getFieldsValue()});*/
     });
   }
 
