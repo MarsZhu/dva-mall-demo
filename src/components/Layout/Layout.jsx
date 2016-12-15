@@ -15,7 +15,7 @@ const Layout = (props) => {
 					defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']}>
 					<SubMenu key="sub1" title={<span><Icon type="setting" />系统管理</span>}>
 						<Menu.Item key="1"><Link to="/accounts">帐号管理</Link></Menu.Item>
-						<Menu.Item key="2">角色管理</Menu.Item>
+						<Menu.Item key="2"><Link to="/menus">菜单管理</Link></Menu.Item>
 						<Menu.Item key="3">权限管理</Menu.Item>
 					</SubMenu>
 					<SubMenu key="sub2" title={<span><Icon type="user" />xx管理</span>}>

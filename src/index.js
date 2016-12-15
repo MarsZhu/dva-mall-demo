@@ -14,6 +14,7 @@ const app = dva({
 //app.use({});
 
 // 3. Model
+app.model(require('./models/menus.js'));
 app.model(require('./models/accounts.js'));
 
 // 4. Router

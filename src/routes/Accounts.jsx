@@ -69,7 +69,7 @@ function Accounts({ location, dispatch, accounts }) {
 	return (
 		<div className={styles.normal}>
 			{/* 用户筛选搜索框 */}
-			{/*<AccountSearch {...AccountSearchProps} />*/}
+			{<AccountSearch {...AccountSearchProps} />}
 			{/* 用户信息展示列表 */}
 			<AccountList {...AccountListProps} />
 			{/* 添加用户 & 修改用户弹出的浮层 */}

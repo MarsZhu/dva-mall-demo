@@ -7,7 +7,7 @@ export default {
 
   state: {
     list: [],
-    total: null, 
+    total: null,
     loading: false, // 控制加载状态
     current: null, // 当前分页信息
 		size: null, // 每页记录数
@@ -23,8 +23,8 @@ export default {
 					dispatch({
 						type: 'query',
 						payload: {
-							current: DEFAULT_PAGE_CURRENT, 
-							size: DEFAULT_PAGE_SIZE, 
+							current: DEFAULT_PAGE_CURRENT,
+							size: DEFAULT_PAGE_SIZE,
 							...location.query
 						}
 					});
@@ -36,7 +36,7 @@ export default {
 	effects: {
 		*query({ payload }, { select, call, put }) {
 			yield put({ type: 'showLoading' });
-			const { data } = yield call(query, payload);
+      const { data } = yield call(query, payload);
 			if (data) {
 				yield put({
 					type: 'querySuccess',
