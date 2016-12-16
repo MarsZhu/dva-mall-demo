@@ -4,4 +4,10 @@ const FormItem=Form.Item;
 
 const MenuForm=( )=>{
 
+    return (
+      <Form inline onSubmit={}>
+
+      </Form>
+
+    );
 }
