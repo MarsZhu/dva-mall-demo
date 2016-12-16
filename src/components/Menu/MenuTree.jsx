@@ -1,8 +1,6 @@
 import { TreeSelect } from 'antd';
 import React,{ PropTypes } from 'react';
 
-const SHOW_PRARENT=TreeSelect.SHOW_PARENT;
-
 const MenuTree=({
   data
 })=>{
