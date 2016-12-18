@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Router, Route } from 'dva/router';
 import Layout from './components/Layout/Layout';
 import Accounts from './routes/Accounts';
-import Demo from './components/Menu/MenuForm';
+import Demo from './routes/MenuEdit';
 
 export default function({ history }) {
 	return (
