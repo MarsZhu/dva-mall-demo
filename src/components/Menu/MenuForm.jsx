@@ -13,13 +13,7 @@ const formItemLayout = {
 
 
 const MenuForm=({
-  menuName,
-  menuCode,
-  parentId,
-  menuUrl,
-  imageUrl,
-  desc,
-  sort,
+  menuName,menuCode,parentId,menuUrl,imageUrl,desc,sort,
   status,
   deep,
   form:{
@@ -28,18 +22,17 @@ const MenuForm=({
     getFieldsValue,
   },
 })=>{
-
-  function handleOk() {
+  function handleOk(e) {
+    e.preventDefault();
     validateFields((errors) => {
       if (errors) {
         return;
       }
-      const data = {...getFieldsValue(), key: item.id};
-      onOk(data);
+      const data = {...getFieldsValue()};
+      dispatch();
+      //onOk(data);
     });
   }
-
-
   function checkPassword(rule, value, callback) {
     if (!value) {
       callback(new Error('密码未填写'));
@@ -51,10 +44,9 @@ const MenuForm=({
     }
   }
 
-
   return (
-    <Form horizontal>
-      <FormItem
+    <Form horizontal onSubmit={handleOk}>
+      <FormItems
         label="菜单名称："
         hasFeedback
         {...formItemLayout}
@@ -65,9 +57,9 @@ const MenuForm=({
             { required: true, message: '菜单名称未填写' },
           ],
         })(
-          <Input type="text" />
+          <Input type="sstext" />
         )}
-      </FormItem>
+      </FormItems>
       <FormItem
         label="菜单编码："
         hasFeedback
@@ -193,7 +185,6 @@ const MenuForm=({
       </FormItem>
     </Form>
   );
-
 
 };
 

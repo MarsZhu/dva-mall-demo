@@ -2,23 +2,29 @@ import { TreeSelect } from 'antd';
 import React,{ PropTypes } from 'react';
 
 const MenuTree=({
-  data
+  treeData,
+  value,
+  onChange,
+  multiple,
+  treeCheckable,
+  showCheckedStrategy,
+  searchPlaceholder,
 })=>{
- /* const tProps = {
+  const tProps = {
     treeData,
-    value: this.state.value,
-    onChange: this.onChange,
-    multiple: true,
-    treeCheckable: true,
-    showCheckedStrategy: SHOW_PARENT,
-    searchPlaceholder: 'Please select',
+    value:value,
+    onChange:onChange,
+    multiple: multiple,
+    treeCheckable: treeCheckable,
+    showCheckedStrategy: showCheckedStrategy,
+    searchPlaceholder: searchPlaceholder,
     style: {
       width: 300,
     },
-  };*/
+  };
 
   return (
-    <TreeSelect ></TreeSelect>
+    <TreeSelect {...tProps}></TreeSelect>
   );
 
 }

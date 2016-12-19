@@ -17,13 +17,21 @@ function MenuEdit({ location,dispatch,menus}) {
     sort,
     status,
     deep,
-    treeData
+    selectValue,
+    dataSource
   }=menus;
 
   const menuTreeProps = {
-    treeData,
-    // value: this.state.value,
-    // onChange: this.onChange,
+    treeData:dataSource,
+    value: selectValue,
+    onChange(value) {
+      dispatch({
+        type: 'menus/changeValue',
+        payload: {
+          selectValue:value
+        },
+      });
+    },
     multiple: true,
     treeCheckable: true,
     // showCheckedStrategy: SHOW_PARENT,

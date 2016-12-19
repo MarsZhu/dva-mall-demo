@@ -3,6 +3,7 @@ import { Router, Route } from 'dva/router';
 import Layout from './components/Layout/Layout';
 import Accounts from './routes/Accounts';
 import Demo from './routes/MenuEdit';
+import TestForm from './components/Test/HorizontalLoginForm'
 
 export default function({ history }) {
 	return (
