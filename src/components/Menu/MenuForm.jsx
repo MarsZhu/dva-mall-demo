@@ -11,6 +11,7 @@ const formItemLayout = {
   },
 };
 
+
 const MenuForm=({
   menuName,
   menuCode,
@@ -37,6 +38,7 @@ const MenuForm=({
       onOk(data);
     });
   }
+
 
   function checkPassword(rule, value, callback) {
     if (!value) {
@@ -199,4 +201,6 @@ MenuForm.propTypes={
   form:PropTypes.object,
 }
 
+
 export default Form.create()(MenuForm);
+
