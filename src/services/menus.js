@@ -7,3 +7,6 @@ import qs from 'qs';
 export async function query(params) {
   return request('/api/menus');
 }
+export async function submitData(params) {
+  return request('/api/menus',params);
+}

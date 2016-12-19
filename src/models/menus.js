@@ -1,5 +1,5 @@
 import {hashHistory} from 'dva/router';
-import {query} from '../services/menus'
+import {query,submitData} from '../services/menus'
 
 
 export default {
@@ -27,6 +27,18 @@ export default {
 
   effects:{
 
+    *modifyMenus({payload},{select,call,put}){
+
+      const { data }=yield call(submitData,payload);
+      if(data){
+        yield put({
+          type:'querySuccess',
+          payload:{
+            dataSource:data.data
+          }
+        });
+      }
+      },
     *query({payload},{select,call,put}){
       const { data }=yield call(query,payload);
       if(data){

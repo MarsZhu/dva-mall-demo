@@ -50,7 +50,7 @@ export default {
 			}
 		},
 		*create(){},
-		*'delete'({ payload }, { select, call, put }) {
+		*delete({ payload }, { select, call, put }) {
 			yield put({ type: 'showLoading' });
 			const { data } = yield call(remove, { id: payload });
 			if (data && data.success) {

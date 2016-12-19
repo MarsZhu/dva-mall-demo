@@ -14,8 +14,7 @@ const formItemLayout = {
 
 const MenuForm=({
   menuName,menuCode,parentId,menuUrl,imageUrl,desc,sort,
-  status,
-  deep,
+  status, deep,submitData,
   form:{
     getFieldDecorator,
     validateFields,
@@ -29,24 +28,23 @@ const MenuForm=({
         return;
       }
       const data = {...getFieldsValue()};
-      dispatch();
-      //onOk(data);
+      submitData(data);
     });
   }
-  function checkPassword(rule, value, callback) {
-    if (!value) {
-      callback(new Error('密码未填写'));
-    }
-    if (!/^[0-9a-zA-Z]{6,10}$/.test(value)) {
-      callback(new Error('密码不合法'));
-    } else {
-      callback();
-    }
-  }
+  // function checkPassword(rule, value, callback) {
+  //   if (!value) {
+  //     callback(new Error('密码未填写'));
+  //   }
+  //   if (!/^[0-9a-zA-Z]{6,10}$/.test(value)) {
+  //     callback(new Error('密码不合法'));
+  //   } else {
+  //     callback();
+  //   }
+  // }
 
   return (
     <Form horizontal onSubmit={handleOk}>
-      <FormItems
+      <FormItem
         label="菜单名称："
         hasFeedback
         {...formItemLayout}
@@ -59,8 +57,8 @@ const MenuForm=({
         })(
           <Input type="sstext" />
         )}
-      </FormItems>
-      <FormItem
+      </FormItem>
+     {/* <FormItem
         label="菜单编码："
         hasFeedback
         {...formItemLayout}
@@ -177,7 +175,7 @@ const MenuForm=({
         })(
           <Input type="text" />
         )}
-      </FormItem>
+      </FormItem>*/}
 
 
       <FormItem wrapperCol={{ span: 12, offset: 6 }}>

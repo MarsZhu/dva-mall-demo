@@ -21,6 +21,17 @@ function MenuEdit({ location,dispatch,menus}) {
     dataSource
   }=menus;
 
+  const menuFormProps={
+
+    submitData(){
+      dispatch({
+        type: 'menus/modifyMenus',
+        payload: data
+      }
+    );
+    }
+  };
+
   const menuTreeProps = {
     treeData:dataSource,
     value: selectValue,
@@ -43,7 +54,7 @@ function MenuEdit({ location,dispatch,menus}) {
 
   return (
     <div>
-      <MenuForm ></MenuForm>
+      <MenuForm {...menuFormProps}></MenuForm>
       <MenuTree {...menuTreeProps}/>
 
     </div>
